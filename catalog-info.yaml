@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tf-az-overlays-computeimagegallery
+  name: terraform-az-overlays-computeimagegallery
   description: Terraform overlay module for Azure Compute Image Gallery
   annotations:
-    github.com/project-slug: POps-Rox/tf-az-overlays-computeimagegallery
+    github.com/project-slug: POps-Rox/terraform-az-overlays-computeimagegallery
     backstage.io/techdocs-ref: dir:.
   tags:
     - terraform
@@ -12,7 +12,7 @@ metadata:
     - azure
     - platform-ops
   links:
-    - url: https://github.com/POps-Rox/tf-az-overlays-computeimagegallery
+    - url: https://github.com/POps-Rox/terraform-az-overlays-computeimagegallery
       title: GitHub Repository
       icon: github
 spec:
