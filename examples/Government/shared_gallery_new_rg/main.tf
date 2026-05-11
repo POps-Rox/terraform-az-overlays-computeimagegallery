@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 
 module "mod_compute_image_gallery" {
-  #source  = "github.com/POps-Rox/tf-az-overlays-computeimagegallery"
+  #source  = "github.com/POps-Rox/terraform-az-overlays-computeimagegallery"
   #version = "x.x.x"
   source = "../../.."
 
