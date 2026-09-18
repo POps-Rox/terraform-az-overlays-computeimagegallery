@@ -15,24 +15,19 @@ resource "azurerm_shared_image_gallery" "compute_image_gallery" {
   dynamic "sharing" {
     for_each = var.compute_gallery[*]
     content {
-      permission = sharing.value.permission
-    }
-  }
+      permission = var.enable_community_gallery ? "Community" : sharing.value.permission
 
-  dynamic "sharing" {
-    for_each = var.enable_community_gallery ? [var.compute_gallery[*]] : []
-    content {
-      permission = "Community"
-
-      community_gallery {
-        eula            = sharing.value.eula
-        prefix          = sharing.value.prefix
-        publisher_email = sharing.value.publisher_email
-        publisher_uri   = sharing.value.publisher_uri
+      dynamic "community_gallery" {
+        for_each = var.enable_community_gallery ? [sharing.value] : []
+        content {
+          eula            = community_gallery.value.eula
+          prefix          = community_gallery.value.prefix
+          publisher_email = community_gallery.value.publisher_email
+          publisher_uri   = community_gallery.value.publisher_uri
+        }
       }
     }
   }
 
   tags = merge(local.default_tags, var.add_tags)
 }
-
