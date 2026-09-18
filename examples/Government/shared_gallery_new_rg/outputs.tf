@@ -18,5 +18,5 @@ output "name" {
 
 output "shared_images_definitions" {
   description = "Azure Shared Images definitions"
-  value       = module.mod_compute_image_gallery.shared_image
+  value       = module.mod_compute_image_gallery.shared_images_definitions
 }

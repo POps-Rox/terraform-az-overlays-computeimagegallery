@@ -11,5 +11,5 @@ data "popsrox_resource_name" "shared_image_gallery" {
   suffixes      = compact([var.name_prefix == "" ? null : local.name_prefix, var.environment, local.name_suffix, var.use_naming ? "sig" : local.anoa_slug])
   use_slug      = var.use_naming
   clean_input   = true
-  separator     = "-"
+  separator     = "_"
 }
